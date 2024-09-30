@@ -74,6 +74,7 @@ h2 {
   color: black;
   text-decoration: none;
   font-size: 1.2em;
+  padding: 4px;
 }
 
 .header-navigation-link:hover {
@@ -213,3 +214,11 @@ th {
   flex-direction: column;
   align-items: center;
 }
+
+/* TODO: Потом переделать название */
+.now {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2px;
+}
+
