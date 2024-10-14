@@ -12,22 +12,22 @@
       <!-- Информация в шапке сайта -->
       <div class="header-info">
         <!-- Логотип -->
-        <div class="header-logo">
+        <div class="logo-container">
           <img
             src="src/img/earth-europe-solid.svg"
             alt="Логотип"
             class="icon" />
-          <p>Лого</p>
+          <p class="logo-text">Лого</p>
         </div>
         <!-- Основная информация -->
-        <div>
-          <p class="text-paragraph">Группа: <u>ЭФБО-09-23</u></p>
-          <p class="text-paragraph">Калинин Никита Викторович</p>
+        <div class="user-info">
+          <p class="group-info">Группа: <u>ЭФБО-09-23</u></p>
+          <p class="user-name">Калинин Никита Викторович</p>
         </div>
       </div>
       <!-- Основная навигация в шапке -->
       <nav class="header-navigation">
-        <a href="index.html" class="header-navigation-link now">Главная страница</a>
+        <a href="index.html" class="header-navigation-link">Главная страница</a>
         <a href="first_term.html" class="header-navigation-link"
           >Первый семестр</a
         >
@@ -40,7 +40,7 @@
     <div class="container">
       <!-- Навигация по странице -->
       <nav class="page-navigation">
-        <p class="text-paragraph">Навигация по странице</p>
+        <p>Навигация по странице</p>
         <ul style="padding: 0; list-style: none">
           <li>
             <a href="#frontend-header" class="page-navigation-link">Фронтенд</a>
@@ -54,17 +54,19 @@
       <main class="page-info">
         <!-- Заголовок страницы -->
         <h1 class="main-heading">Добро пожаловать на мой сайт</h1>
-        <article class="user-info">
-          <!-- Введение -->
-          <p style="width: 50%">
-            Меня зовут Иванов Иван Иванович и я начинающий специалист по
-            веб-разработке.
-          </p>
-          <!-- Изображение пользователя -->
-          <img src="src/img/user-solid.svg" alt="user" class="user-image" />
-        </article>
-        <!-- Раздел о фронтенде -->
-        <section>
+        <!-- Контейнер для сетки -->
+        <div class="grid-container">
+          <article class="grid-item">
+            <!-- Изображение пользователя -->
+            <img src="src/img/user-solid.svg" alt="user" class="user-image" />
+            <!-- Введение -->
+            <p style="width: 50%">
+              Меня зовут Иванов Иван Иванович и я начинающий специалист по
+              веб-разработке.
+            </p>
+          </article>
+          <!-- Раздел о фронтенде -->
+          <section class="grid-item">
           <h2 id="frontend-header" class="sub-heading">Фронтенд</h2>
           <p>
             Фронтенд (Frontend) — это часть веб-разработки, которая отвечает за
@@ -129,7 +131,7 @@
           </video>
         </section>
         <!-- Раздел о бэкенде -->
-        <section>
+        <section class="grid-item">
           <h2 id="backend-header" class="sub-heading">Бэкенд</h2>
           <p>
             Бэкенд (Backend) — это часть веб-разработки, которая отвечает за
@@ -221,5 +223,19 @@
         </a>
       </div>
     </footer>
+    <script>
+      // Получаем текущий URL
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // Получаем все ссылки навигации
+      const navLinks = document.querySelectorAll(".header-navigation-link");
+
+      // Устанавливаем класс active для текущей страницы
+      navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
   </body>
 </html>
