@@ -96,6 +96,7 @@ function handlePhotoDoubleClick() {
 
 showMessage("Скрипт загружен!");
 logCurrentTime();
+updateH1WithUTMTerm();
 
 document.addEventListener("DOMContentLoaded", () => {
     resetBackgroundColor();
